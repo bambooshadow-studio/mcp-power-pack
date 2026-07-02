@@ -1,0 +1,60 @@
+Rule Name: ai-mcp-development
+Description: Guidelines for developing and debugging MCP servers and tools.
+Filters:
+  - file: "*.py"
+  - file: "*.js"
+  - file: "*.ts"
+  - file: "*.json"
+  - file: "*.yaml"
+---
+// MCP DEVELOPMENT GUIDELINES
+
+## MCP Server Structure
+```python
+# Python MCP Server
+from mcp.server import Server
+from mcp.server.stdio import stdio_server
+
+server = Server("my-tool")
+
+@server.tool()
+async def my_tool(param: str) -> str:
+    """Tool description."""
+    return f"Result: {param}"
+
+async def main():
+    async with stdio_server() as streams:
+        await server.run(streams[0], streams[1])
+```
+
+## Tool Design Rules
+1. Each tool should do ONE thing well
+2. Clear parameter names with descriptions
+3. Return structured data (JSON, Markdown)
+4. Handle errors gracefully with descriptive messages
+5. Include input validation
+
+## Configuration Pattern
+```json
+// Claude Desktop / Cursor config
+{
+  "mcpServers": {
+    "my-server": {
+      "command": "python",
+      "args": ["-m", "my_server"],
+      "env": {}
+    }
+  }
+}
+```
+
+## Testing MCP Servers
+1. Test with MCP Inspector: `npx @modelcontextprotocol/inspector`
+2. Test error paths (missing params, invalid input)
+3. Test with both stdio and SSE transport
+
+## Debugging
+- Check stdout/stderr for error messages
+- Use `mcp-server/inspector` for interactive testing
+- Verify env vars are properly passed
+- Check Node.js and Python versions
