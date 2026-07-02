@@ -1,0 +1,42 @@
+Rule Name: ai-test-generation
+Description: Generate comprehensive tests when creating or modifying code. Use the appropriate test framework for the language.
+Filters:
+  - file: "*.py"
+  - file: "*.js"
+  - file: "*.ts"
+  - file: "*.rs"
+  - file: "*.go"
+---
+// TEST GENERATION GUIDE
+
+## Test Coverage Requirements
+- Unit tests for all new functions and methods
+- Integration tests for API endpoints and database operations
+- Edge case tests (empty input, invalid input, boundary values)
+- Error path tests (exception handling, error states)
+
+## Framework Per Language
+- Python: pytest
+- JavaScript/TypeScript: vitest or jest
+- Rust: cargo test
+- Go: go test
+
+## Test Structure
+```
+// Unit test pattern
+describe('function/component name', () => {
+  it('should handle normal case', () => { ... })
+  it('should handle edge case', () => { ... })
+  it('should handle error case', () => { ... })
+})
+```
+
+## Naming Convention
+- test_[function_name]_[scenario]
+- [function] should [expected behavior] when [condition]
+
+## What to Test
+1. Happy path: normal inputs produce expected outputs
+2. Edge cases: empty/null/undefined inputs, max/min values
+3. Error handling: invalid inputs, network failures, auth failures
+4. State changes: verify side effects and state mutations
