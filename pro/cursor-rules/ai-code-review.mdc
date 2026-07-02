@@ -1,0 +1,51 @@
+Rule Name: ai-code-review
+Description: Always review code for security, performance, correctness, and maintainability before submitting.
+Filters:
+  - file: "*.py"
+  - file: "*.js"
+  - file: "*.ts"
+  - file: "*.jsx"
+  - file: "*.tsx"
+  - file: "*.rs"
+---
+// CODE REVIEW CHECKLIST
+// Priority: Security > Performance > Correctness > Maintainability
+
+## Security
+- Check for injection vulnerabilities (SQL, XSS, command injection)
+- Verify authentication and authorization checks
+- Look for hardcoded secrets, API keys, passwords
+- Validate input sanitization
+
+## Performance
+- Identify N+1 query patterns
+- Check for unnecessary API calls or database queries
+- Look for memory leaks in closures and event listeners
+- Verify caching opportunities
+
+## Correctness
+- Check error handling paths (try/catch, error boundaries)
+- Verify edge cases (empty states, null/undefined, boundary values)
+- Check race conditions in async code
+- Validate type safety
+
+## Maintainability
+- Meaningful variable and function names
+- Single responsibility per function
+- DRY principle violations
+- Adequate documentation for complex logic
+
+## Output Format
+```
+## Security Issues (X found)
+- CRITICAL: [issue] at [file:line]
+
+## Performance Issues (X found)
+- HIGH: [issue] at [file:line]
+
+## Correctness Issues (X found)
+- HIGH: [issue] at [file:line]
+
+## Maintainability (X found)
+- MEDIUM: [issue] at [file:line]
+```
