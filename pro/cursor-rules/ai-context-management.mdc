@@ -1,0 +1,43 @@
+Rule Name: ai-context-management
+Description: When the conversation context is getting long or the model is losing track of details, proactively summarize and restructure context.
+---
+// CONTEXT MANAGEMENT
+
+## When to Summarize
+- After 10+ file modifications in a session
+- When the model starts repeating itself or forgetting details
+- Before starting a significantly different task
+- When approaching context limits
+
+## What to Preserve in Summary
+- Project goals and current milestone
+- Architecture decisions made
+- Files created/modified and their purposes
+- Known issues or limitations
+- Next steps
+
+## Context Structure
+```
+## Session Summary
+**Goal:** [current task objective]
+**Status:** [in progress / blocked / complete]
+
+### Files Changed
+- [path]: [what was done]
+
+### Decisions
+- [decision]: [rationale]
+
+### Blockers
+- [issue]: [what's needed]
+
+### Next
+1. [next action item]
+2. [next action item]
+```
+
+## Best Practices
+- Keep summaries under 500 tokens
+- Only include decisions that affect future work
+- Remove resolved issues from context
+- Link to specific file paths and line numbers
