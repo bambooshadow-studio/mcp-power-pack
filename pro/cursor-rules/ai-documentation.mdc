@@ -1,0 +1,63 @@
+Rule Name: ai-documentation
+Description: Generate and update documentation when creating or modifying public APIs, complex logic, or configuration files.
+Filters:
+  - file: "*.py"
+  - file: "*.js"
+  - file: "*.ts"
+  - file: "*.rs"
+  - file: "*.go"
+  - file: "*.md"
+  - file: "*.yaml"
+  - file: "*.yml"
+  - file: "*.json"
+---
+// DOCUMENTATION STANDARDS
+
+## When to Document
+- New functions, classes, or modules
+- Public API endpoints
+- Configuration files with non-obvious values
+- Complex business logic
+- Breaking changes to existing APIs
+
+## Documentation Standards
+
+### Python (Google-style docstrings)
+```python
+def func(param1: str, param2: int) -> bool:
+    """Short description.
+
+    Longer description of what this does.
+
+    Args:
+        param1: Description of param1
+        param2: Description of param2
+
+    Returns:
+        Description of return value
+
+    Raises:
+        ValueError: When input is invalid
+    """
+```
+
+### TypeScript/JSDoc
+```typescript
+/**
+ * Short description of function.
+ * @param param1 - Description of param1
+ * @param param2 - Description of param2
+ * @returns Description of return value
+ */
+```
+
+### README Updates
+When modifying project structure, CLI commands, or APIs:
+1. Update the relevant section in README
+2. Document setup steps for new dependencies
+3. Add usage examples
+
+## Code Comments
+- Explain WHY, not what (the code shows what)
+- Add TODO/FIXME/HACK markers for known improvements
+- Document non-obvious behavior and edge cases
