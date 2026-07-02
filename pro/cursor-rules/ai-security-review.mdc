@@ -1,0 +1,49 @@
+Rule Name: ai-security-review
+Description: Perform security review for any code that handles user input, authentication, database queries, or external API calls.
+Filters:
+  - file: "*.py"
+  - file: "*.js"
+  - file: "*.ts"
+  - file: "*.rs"
+  - file: "*.go"
+---
+// SECURITY REVIEW GUIDE
+
+## Critical Checks
+- SQL/NoSQL injection in all database queries
+- Cross-site scripting (XSS) in rendered output
+- Cross-site request forgery (CSRF) in state-changing endpoints
+- Server-side request forgery (SSRF) in URL fetch operations
+- Path traversal in file operations
+- Insecure direct object references (IDOR)
+
+## Authentication & Authorization
+- Verify all authenticated endpoints have proper auth checks
+- Check role-based access control (RBAC) is enforced server-side
+- Ensure session tokens are properly validated
+- JWT: verify signature, expiration, and claims
+
+## Secrets Management
+- No hardcoded API keys, passwords, or tokens
+- No secrets in client-side code
+- Use environment variables or secret managers
+- Check .gitignore for secrets files
+
+## Data Protection
+- Encrypt sensitive data in transit (HTTPS/TLS)
+- Hash passwords with bcrypt/argon2 (not plain SHA)
+- Validate and sanitize all user input
+- Implement rate limiting on auth endpoints
+
+## Output Format
+```
+## Security Findings
+
+### CRITICAL: [finding]
+**File:** [path:line]
+**Risk:** [what attacker can do]
+**Fix:** [specific remediation steps]
+
+### HIGH: [finding]
+...
+```
