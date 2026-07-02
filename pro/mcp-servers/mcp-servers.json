@@ -1,0 +1,184 @@
+{
+  "mcpServers": {
+    "browser": {
+      "description": "Web browsing and scraping via Playwright",
+      "command": "npx",
+      "args": ["-y", "@playwright/mcp@latest"],
+      "env": {}
+    },
+    "github": {
+      "description": "GitHub API: repos, issues, PRs, code search",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_TOKEN}"
+      }
+    },
+    "filesystem": {
+      "description": "Read, write, and manage local files with path restrictions",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/tmp"],
+      "env": {}
+    },
+    "fetch": {
+      "description": "Fetch and convert web content to Markdown",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-fetch"],
+      "env": {}
+    },
+    "notion": {
+      "description": "Notion workspace API integration",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-notion"],
+      "env": {
+        "NOTION_API_TOKEN": "${NOTION_TOKEN}"
+      }
+    },
+    "slack": {
+      "description": "Slack workspace messaging and channel management",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-slack"],
+      "env": {
+        "SLACK_BOT_TOKEN": "${SLACK_TOKEN}",
+        "SLACK_TEAM_ID": "${SLACK_TEAM}"
+      }
+    },
+    "discord": {
+      "description": "Discord bot for server and message management",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-discord"],
+      "env": {
+        "DISCORD_BOT_TOKEN": "${DISCORD_TOKEN}"
+      }
+    },
+    "postgres": {
+      "description": "PostgreSQL database: query, schema, and data operations",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-postgres"],
+      "env": {
+        "DATABASE_URL": "${DATABASE_URL}"
+      }
+    },
+    "sqlite": {
+      "description": "SQLite database operations",
+      "command": "uvx",
+      "args": ["mcp-server-sqlite", "--db-path", "/tmp/test.db"],
+      "env": {}
+    },
+    "redis": {
+      "description": "Redis cache and data structure operations",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-redis"],
+      "env": {
+        "REDIS_URL": "${REDIS_URL}"
+      }
+    },
+    "docker": {
+      "description": "Docker container and image management",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-docker"],
+      "env": {}
+    },
+    "kubernetes": {
+      "description": "Kubernetes cluster management",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-kubernetes"],
+      "env": {
+        "KUBECONFIG": "${KUBECONFIG:-~/.kube/config}"
+      }
+    },
+    "stripe": {
+      "description": "Stripe payment processing and billing",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-stripe"],
+      "env": {
+        "STRIPE_API_KEY": "${STRIPE_KEY}"
+      }
+    },
+    "supabase": {
+      "description": "Supabase project and database management",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-supabase"],
+      "env": {
+        "SUPABASE_URL": "${SUPABASE_URL}",
+        "SUPABASE_KEY": "${SUPABASE_KEY}"
+      }
+    },
+    "elasticsearch": {
+      "description": "Elasticsearch search and indexing",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-elasticsearch"],
+      "env": {
+        "ELASTICSEARCH_URL": "${ES_URL}",
+        "ELASTICSEARCH_API_KEY": "${ES_KEY}"
+      }
+    },
+    "memory": {
+      "description": "Persistent memory and knowledge graph for AI agents",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-memory"],
+      "env": {}
+    },
+    "brave-search": {
+      "description": "Web search via Brave Search API",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-brave-search"],
+      "env": {
+        "BRAVE_API_KEY": "${BRAVE_KEY}"
+      }
+    },
+    "exa": {
+      "description": "AI-powered web search and content extraction via Exa",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-exa"],
+      "env": {
+        "EXA_API_KEY": "${EXA_KEY}"
+      }
+    },
+    "firebase": {
+      "description": "Firebase/Firestore database operations",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-firebase"],
+      "env": {
+        "FIREBASE_SERVICE_ACCOUNT_KEY": "${FIREBASE_KEY}"
+      }
+    },
+    "sentry": {
+      "description": "Sentry error tracking and performance monitoring",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-sentry"],
+      "env": {
+        "SENTRY_AUTH_TOKEN": "${SENTRY_TOKEN}",
+        "SENTRY_ORG": "${SENTRY_ORG}"
+      }
+    },
+    "linear": {
+      "description": "Linear project management and issue tracking",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-linear"],
+      "env": {
+        "LINEAR_API_KEY": "${LINEAR_KEY}"
+      }
+    },
+    "figma": {
+      "description": "Figma design file access and component extraction",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-figma"],
+      "env": {
+        "FIGMA_ACCESS_TOKEN": "${FIGMA_TOKEN}"
+      }
+    },
+    "youtube": {
+      "description": "YouTube video transcripts and metadata",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-youtube"],
+      "env": {}
+    },
+    "weather": {
+      "description": "Weather forecasts and current conditions via National Weather Service",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-weather"],
+      "env": {}
+    }
+  }
+}
