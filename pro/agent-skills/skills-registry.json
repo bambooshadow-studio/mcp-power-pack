@@ -1,0 +1,84 @@
+{
+  "skills": {
+    "code-reviewer": {
+      "description": "Thorough code review with security, performance, and best practice checks",
+      "trigger": "review|code review|pr review|pull request"
+    },
+    "security-auditor": {
+      "description": "OWASP Top 10, injection, XSS, secrets, and auth issue scanning",
+      "trigger": "security|vulnerability|owasp|audit"
+    },
+    "data-analyst": {
+      "description": "Data exploration, statistical analysis, and insight generation",
+      "trigger": "analyze data|data analysis|statistics|insights"
+    },
+    "debugger": {
+      "description": "Systematic bug hunting and root cause analysis",
+      "trigger": "debug|bug|error|crash|fix"
+    },
+    "content-creator": {
+      "description": "Blog posts, social media content, and marketing copy",
+      "trigger": "write content|blog|social media|copywriting"
+    },
+    "decision-helper": {
+      "description": "Structured decision frameworks and trade-off analysis",
+      "trigger": "decision|trade-off|compare|pros and cons"
+    },
+    "fact-checker": {
+      "description": "Claim verification and source validation",
+      "trigger": "fact check|verify|source|citation"
+    },
+    "fullstack-developer": {
+      "description": "End-to-end web application development",
+      "trigger": "fullstack|web app|frontend|backend|api"
+    },
+    "ux-designer": {
+      "description": "UI/UX design feedback and wireframe suggestions",
+      "trigger": "design|ui|ux|layout|user experience"
+    },
+    "project-planner": {
+      "description": "Project roadmaps, milestones, and resource planning",
+      "trigger": "plan|roadmap|milestone|project plan"
+    },
+    "meeting-notes": {
+      "description": "Meeting summaries, action items, and follow-ups",
+      "trigger": "meeting|notes|minutes|action items"
+    },
+    "email-drafter": {
+      "description": "Professional email composition and templates",
+      "trigger": "email|draft|compose|reply"
+    },
+    "technical-writer": {
+      "description": "Documentation, API docs, and technical guides",
+      "trigger": "document|write docs|technical writing|api docs"
+    },
+    "academic-researcher": {
+      "description": "Literature reviews, paper analysis, and citation management",
+      "trigger": "research|paper|literature|citation|academic"
+    },
+    "strategy-advisor": {
+      "description": "Business strategy and competitive analysis",
+      "trigger": "strategy|competitive|market analysis|business"
+    },
+    "editor": {
+      "description": "Proofreading, style improvements, and clarity editing",
+      "trigger": "edit|proofread|rewrite|improve writing"
+    },
+    "deep-research": {
+      "description": "Multi-source research with synthesis and citations",
+      "trigger": "deep research|investigate|thorough analysis"
+    },
+    "sprint-planner": {
+      "description": "Sprint planning, task estimation, and backlog grooming",
+      "trigger": "sprint|agile|backlog|estimation|scrum"
+    },
+    "python-expert": {
+      "description": "Python optimization, packaging, and best practices",
+      "trigger": "python|pypi|package|optimize python"
+    },
+    "visualization-expert": {
+      "description": "Charts, dashboards, and data storytelling",
+      "trigger": "chart|dashboard|visualize|plot|graph"
+    }
+  }
+}
